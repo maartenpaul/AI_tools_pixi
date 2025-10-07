@@ -44,12 +44,12 @@ Deep learning-based image restoration and denoising toolkit. Uses CUDA 12.8 with
 ### **cellpose/** • [Documentation](https://cellpose.readthedocs.io/en/latest/)
 Generalist algorithm for cell and nucleus segmentation with GPU acceleration.
 - **Purpose**: Cell segmentation using deep learning
-- **Key packages**: cellpose with GUI, PyTorch
+- **Key packages**: cellpose 4 with GUI, PyTorch
 - **CUDA**: 12.8
 
 ### **micro_sam/** • [Documentation](https://computational-cell-analytics.github.io/micro-sam/micro_sam.html)
 Segment Anything Model (SAM) adapted for microscopy images.
-- **Purpose**: Interactive and automatic segmentation for microscopy
+- **Purpose**: Interactive and automatic segmentation for microscopy using napari
 - **Key packages**: micro_sam, pytorch, napari-omero, trackastra
 - **CUDA**: 12.8
 
@@ -60,7 +60,7 @@ BiaPy - Library for training bioimage analysis AI models.
 - **Python**: 3.12
 
 ### **stardist/** • [GitHub](https://github.com/stardist/stardist)
-Star-convex polyhedra for object detection in microscopy images.
+Star-convex object detection in microscopy images, especially for segmentation of cell nuclei.
 - **Purpose**: Object detection and instance segmentation
 - **Key packages**: stardist, napari, tensorflow 2.10
 - **CUDA**: 11.8 (older version for TensorFlow compatibility)
@@ -79,6 +79,9 @@ Navigate to any folder and activate its environment:
 
 ```powershell
 cd cellpose
+#optionally run first
+pixi install
+
 pixi shell
 ```
 
@@ -97,7 +100,6 @@ pixi run napari           # Launch Napari viewer
 
 # Run Python in any environment
 pixi run python           # Starts Python with all packages available
-pixi run python script.py # Run a specific script
 ```
 
 ### Working with Jupyter Notebooks
