@@ -2,16 +2,18 @@
 authors = ["Maarten Paul <maarten.paul@gmail.com>"]
 channels = ["conda-forge"]
 name = "trackastra"
-platforms = ["win-64"]
+platforms = ["win-64","linux-64"]
 version = "0.1.0"
 
 [system-requirements]
 cuda = "12.8"
 
-[tasks]
-
 [dependencies]
-python = "3.10.*"
+python = "==3.11"
+pytorch = ">=2.7.1,<3"
 
 [pypi-dependencies]
-trackastra = ">=0.3.2, <0.4"
+trackastra = ">=0.4, <0.5"
+
+[tasks]
+test-cuda = "python -c \"import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}'); print(f'Device count: {torch.cuda.device_count()}'); print(f'Current device: {torch.cuda.current_device() if torch.cuda.is_available() else None}'); print(f'Device name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else None}')\""

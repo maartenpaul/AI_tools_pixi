@@ -5,9 +5,6 @@ name = "CAREamics"
 platforms = ["win-64","linux-64"]
 version = "0.1.0"
 
-#250912 Does not work, issues with pytorch, careamics not matching requirment for pillow
-[tasks]
-
 [system-requirements]
 cuda = "12.8"
 
@@ -15,13 +12,12 @@ cuda = "12.8"
 python = "==3.11"
 jupyter = ">=1.1.1,<2"
 pyyaml = "<=6.0.2"
-#jupyter = ">=1.1.1,<2"
-#matplotlib = ">=3.10.6,<4"
 
 [feature.bioio.pypi-dependencies]
 bioio-bioformats = ">=1.3.0, <2"
 bioio = ">=3.0.0, <4"
 bioio-tifffile = ">=1.3.0, <2"
+bioio-ome-zarr = ">=2.3.0, <3"
 
 [feature.imagej.pypi-dependencies]
 pyimagej = ">=1.7.0, <2"
@@ -39,3 +35,6 @@ index-strategy = "unsafe-best-match"
 [environments]
 all =["bioio","imagej"]
 default = ["bioio"]
+
+[tasks]
+test-cuda = "python -c \"import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}'); print(f'Device count: {torch.cuda.device_count()}'); print(f'Current device: {torch.cuda.current_device() if torch.cuda.is_available() else None}'); print(f'Device name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else None}')\""
