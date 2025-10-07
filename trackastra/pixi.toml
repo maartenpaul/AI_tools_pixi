@@ -11,6 +11,7 @@ cuda = "12.8"
 [dependencies]
 python = "==3.11"
 pytorch = ">=2.7.1,<3"
+jupyter = ">=1.1.1,<2"
 
 [pypi-dependencies]
 trackastra = ">=0.4, <0.5"

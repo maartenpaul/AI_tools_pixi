@@ -1,7 +1,7 @@
 [workspace]
 authors = ["Maarten Paul <maarten.paul@gmail.com>"]
 channels = ["conda-forge"]
-name = "mlflow"
+name = "biapy"
 platforms = ["win-64","linux-64"]
 version = "0.1.0"
 
