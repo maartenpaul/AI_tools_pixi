@@ -1,0 +1,22 @@
+[workspace]
+channels = ["conda-forge"]
+name = "micro_sam"
+platforms = ["win-64", "linux-64"] #, "osx-64", "osx-arm64"
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.11.*"
+micro_sam = ">=1.6.1,<2"
+pytorch = ">=2.7.1,<3"
+numpy = "<2"
+zeroc-ice = "<3.7"
+
+[system-requirements]
+cuda = "12.8"
+
+[pypi-dependencies]
+trackastra = ">=0.3.2, <0.4"
+omero-py = "==5.21.1"
+napari-omero = { version = ">=0.5.1, <0.6", extras = ["all"] }

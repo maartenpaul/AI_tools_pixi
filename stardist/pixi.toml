@@ -1,0 +1,17 @@
+[workspace]
+authors = ["Maarten Paul <maarten.paul@gmail.com>"]
+channels = ["conda-forge"]
+name = "stardist"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "==3.10"
+cudatoolkit = "11.2.*"
+cudnn = "8.1.0.*"
+numpy = "<2"
+
+[pypi-dependencies]
+tensorflow = "<2.11"

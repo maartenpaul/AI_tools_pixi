@@ -1,0 +1,18 @@
+[workspace]
+authors = ["Maarten Paul <maarten.paul@gmail.com>"]
+channels = ["conda-forge"]
+name = "cellpose"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.11.*"
+pytorch = ">=2.7.1,<3"
+
+[system-requirements]
+cuda = "12.8"
+
+[pypi-dependencies]
+cellpose = { version = ">=4.0.6, <5", extras = ["gui"] }
